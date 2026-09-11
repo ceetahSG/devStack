@@ -9,7 +9,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const technologyFetch = async (): Promise<ITechnology[]> => {
-  const response = await fetch('../public/data/technologies.json');
+  const response = await fetch('/data/technologies.json');
   const data = await response.json();
   return data;
 };
