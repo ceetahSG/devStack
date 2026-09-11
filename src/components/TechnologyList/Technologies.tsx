@@ -13,18 +13,20 @@ const Technologies = ({ technologyPromise }: TechnologyProps) => {
 
   //   console.log(technologies);
   return (
-    <div className="container mx-auto mt-10">
-      <h2 className="text-[#0F172A] font-extrabold text-[36px] mb-2">
-        Explore the{' '}
-        <span className="bg-linear-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
-          Technologies
-        </span>
-      </h2>
-      <p className="text-[#64748B] mb-10">
-        Pick one technology per category to build your ideal stack.
-      </p>
-      <div className="flex flex-col lg:flex-row items-start gap-10">
-        <div className="w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+    <div className="container mx-auto mt-8 px-4 sm:mt-12 sm:px-6 lg:px-8">
+      <div>
+        <h2 className="mb-2 text-3xl font-extrabold text-[#0F172A] sm:text-4xl">
+          Explore the{' '}
+          <span className="bg-linear-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
+            Technologies
+          </span>
+        </h2>
+        <p className="mb-8 text-[#64748B] sm:mb-10">
+          Pick one technology per category to build your ideal stack.
+        </p>
+      </div>
+      <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+        <div className="grid min-w-0 flex-1 grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {technologies.map((t) => (
             <TechnologyCard
               technology={t}
@@ -34,10 +36,12 @@ const Technologies = ({ technologyPromise }: TechnologyProps) => {
             />
           ))}
         </div>
-        <SelectedTechnologies
-          selectedTechnologies={technologyLIst}
-          setSelectedTechnologies={setTechnologyList}
-        />
+        <div className="w-full lg:w-70 lg:shrink-0">
+          <SelectedTechnologies
+            selectedTechnologies={technologyLIst}
+            setSelectedTechnologies={setTechnologyList}
+          />
+        </div>
       </div>
     </div>
   );

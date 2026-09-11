@@ -1,5 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react';
 import type { ITechnology } from '../../type/technology';
+import { toast } from 'react-toastify';
 interface SelectedTechnologiesCardProps {
   technology: ITechnology;
   selectedTechnologies: ITechnology[];
@@ -13,17 +14,26 @@ const SelectedTechnologiesCard = ({
   const handleRemoveFromStack = () => {
     const updatedTechnologies = selectedTechnologies.filter((t) => t.id !== technology.id);
     setSelectedTechnologies(updatedTechnologies);
+    toast.warn(`${technology.name} removed from stack`);
   };
   return (
-    <div className="border border-gray-200 rounded-lg p-5 my-5 flex items-center gap-5 justify-between">
-      <div className="flex items-center gap-5">
+    <div className="my-4 flex items-center justify-between gap-3 rounded-lg border border-gray-200 p-3 sm:my-5 sm:gap-5 sm:p-5">
+      <div className="flex min-w-0 items-center gap-3 sm:gap-5">
         <img src={technology.icon} alt={technology.name} className="w-8 h-auto" />
-        <div>
-          <h2 className="text-[#0F172A] font-bold text-[10px]">{technology.name}</h2>
-          <p className="text-[#64748B] text-[6px] font-bold">{technology.category}</p>
+        <div className="min-w-0">
+          <h2 className="truncate text-[10px] font-bold text-[#0F172A] sm:text-xs">
+            {technology.name}
+          </h2>
+          <p className="text-[8px] font-bold text-[#64748B] sm:text-[10px]">
+            {technology.category}
+          </p>
         </div>
       </div>
-      <button onClick={handleRemoveFromStack} className="font-extralight text-4xl">
+      <button
+        onClick={handleRemoveFromStack}
+        className="shrink-0 p-1 text-2xl font-extralight sm:text-4xl"
+        aria-label={`Remove ${technology.name}`}
+      >
         <span aria-hidden="true">X</span>
       </button>
     </div>

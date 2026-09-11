@@ -8,6 +8,7 @@ interface TechnologyCardProps {
 }
 const TechnologyCard = ({ technology, technologyList, setTechnologyList }: TechnologyCardProps) => {
   // console.log(technologyList, 'from technology card');
+
   const handleAddToStack = () => {
     if (technologyList.find((t) => t.id === technology.id)) {
       toast.error('Technology already added to stack');
@@ -31,7 +32,7 @@ const TechnologyCard = ({ technology, technologyList, setTechnologyList }: Techn
         <p className="text-[#64748B]">{technology.description}</p>
       </div>
       <div className="flex items-center justify-between my-5">
-        <button className=" btn btn-soft text-[#475569] text-[11px] font-medium bg-[#F1F5F9] py-0.5">
+        <button className=" p-1.5 text-[#475569] text-[11px] font-medium bg-[#F1F5F9] rounded-l">
           {technology.category}
         </button>
         <p className="text-[#475569] text-[11px] font-medium">{technology.difficulty}</p>
@@ -42,8 +43,12 @@ const TechnologyCard = ({ technology, technologyList, setTechnologyList }: Techn
           {technology.rating}
         </p>
       </div>
-      <button onClick={() => handleAddToStack()} className="btn btn-neutral px-20">
-        Add To Stack
+      <button
+        onClick={() => handleAddToStack()}
+        disabled={technologyList.some((t) => t.id === technology.id)}
+        className="btn btn-neutral w-full rounded-lg"
+      >
+        {technologyList.some((t) => t.id === technology.id) ? 'Added' : 'Add to Stack'}
       </button>
     </div>
   );
