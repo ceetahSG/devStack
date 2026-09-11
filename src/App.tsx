@@ -4,6 +4,9 @@ import Hero from './components/Hero/Hero';
 import Navbar from './components/Navbar/Navbar';
 import type { ITechnology } from './type/technology';
 import Technologies from './components/TechnologyList/Technologies';
+import Footer from './components/Footer/Footer';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const technologyFetch = async (): Promise<ITechnology[]> => {
   const response = await fetch('../public/data/technologies.json');
@@ -19,6 +22,8 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Technologies technologyPromise={technologyFetch()} />
       </Suspense>
+      <Footer></Footer>
+      <ToastContainer />
     </>
   );
 }

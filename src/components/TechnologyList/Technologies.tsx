@@ -1,12 +1,16 @@
-import { use } from 'react';
+import { use, useState } from 'react';
 import type { ITechnology } from '../../type/technology';
 import TechnologyCard from '../TechnologyCard/TechnologyCard';
+import SelectedTechnologies from './SelectedTechnologies';
 
 interface TechnologyProps {
   technologyPromise: Promise<ITechnology[]>;
 }
 const Technologies = ({ technologyPromise }: TechnologyProps) => {
   const technologies = use(technologyPromise);
+  const [technologyLIst, setTechnologyList] = useState<ITechnology[]>([]);
+  console.log(technologyLIst, 'from technology list');
+
   //   console.log(technologies);
   return (
     <div className="container mx-auto mt-10">
@@ -19,19 +23,21 @@ const Technologies = ({ technologyPromise }: TechnologyProps) => {
       <p className="text-[#64748B] mb-10">
         Pick one technology per category to build your ideal stack.
       </p>
-      <div className="flex items-start gap-10">
-        <div className="w-3/4 grid grid-cols-3 gap-2">
+      <div className="flex flex-col lg:flex-row items-start gap-10">
+        <div className="w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
           {technologies.map((t) => (
-            <TechnologyCard technology={t} key={t.id} />
+            <TechnologyCard
+              technology={t}
+              key={t.id}
+              technologyList={technologyLIst}
+              setTechnologyList={setTechnologyList}
+            />
           ))}
         </div>
-        <div className="w-1/4 border border-gray-200 rounded-lg p-5 ">
-          <h2 className="text-[0F172A] font-bold text-[16px]">Your Stack</h2>
-          <p className="text-[#475569] text-[12px]">No technologies selected yet.</p>
-          <button className="btn btn-neutral btn-dash px-6 py-6 text-[12px]">
-            Your Stack Is Empty
-          </button>
-        </div>
+        <SelectedTechnologies
+          selectedTechnologies={technologyLIst}
+          setSelectedTechnologies={setTechnologyList}
+        />
       </div>
     </div>
   );

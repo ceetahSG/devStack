@@ -1,9 +1,9 @@
 import Banner from '../../assets/banner-stack.png';
 const Hero = () => {
   return (
-    <div className="flex justify-between items-center p-4 text-black container mx-auto">
-      <div className="max-[555px]">
-        <h2 className="text-6xl font-extrabold font-sans mb-7.5">
+    <div className="flex flex-col lg:flex-row justify-between items-center gap-10 p-4 text-black container mx-auto">
+      <div className="w-full max-w-[555px]">
+        <h2 className="text-4xl md:text-6xl font-extrabold font-sans mb-7.5">
           Build Your Ideal{' '}
           <span className="bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent">
             Development Stack
@@ -20,7 +20,7 @@ const Hero = () => {
           <button className="btn rounded-lg font-semibold px-11">Learn more</button>
         </div>
       </div>
-      <img src={Banner} alt="Banner" />
+      <img src={Banner} alt="Banner" className="max-w-full" />
     </div>
   );
 };

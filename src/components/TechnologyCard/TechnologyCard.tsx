@@ -1,8 +1,21 @@
+import type { Dispatch, SetStateAction } from 'react';
 import type { ITechnology } from '../../type/technology';
+import { toast } from 'react-toastify';
 interface TechnologyCardProps {
   technology: ITechnology;
+  technologyList: ITechnology[];
+  setTechnologyList: Dispatch<SetStateAction<ITechnology[]>>;
 }
-const TechnologyCard = ({ technology }: TechnologyCardProps) => {
+const TechnologyCard = ({ technology, technologyList, setTechnologyList }: TechnologyCardProps) => {
+  // console.log(technologyList, 'from technology card');
+  const handleAddToStack = () => {
+    if (technologyList.find((t) => t.id === technology.id)) {
+      toast.error('Technology already added to stack');
+      return;
+    }
+    setTechnologyList([...technologyList, technology]);
+    toast.success(`${technology.name} added to stack`);
+  };
   return (
     <div className="border border-gray-200 rounded-lg p-5 ">
       <div className="flex items-center justify-between my-5">
@@ -23,13 +36,15 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
         </button>
         <p className="text-[#475569] text-[11px] font-medium">{technology.difficulty}</p>
         <p className="font-bold text-[11px]">
-          <span aria-hidden="true" className="text-yellow-400">
+          <span aria-hidden="true" className="text-yellow-400 m-2">
             ★
           </span>
           {technology.rating}
         </p>
       </div>
-      <button className="btn btn-neutral px-20">Add To Stack</button>
+      <button onClick={() => handleAddToStack()} className="btn btn-neutral px-20">
+        Add To Stack
+      </button>
     </div>
   );
 };
