@@ -5,10 +5,10 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="container mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-x-3 gap-y-3 p-4 text-black sm:px-6 lg:flex lg:justify-between lg:px-8">
+    <div className="container mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-x-3 gap-y-3 rounded-xl border border-gray-200 bg-white p-4 text-black sm:px-6 lg:flex lg:justify-between lg:rounded-none lg:border-0 lg:bg-transparent lg:px-8">
       <button
         type="button"
-        className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 lg:hidden"
+        className="flex h-10 w-10 items-center justify-center border-0 bg-transparent p-0 hover:bg-transparent lg:hidden"
         aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
         aria-expanded={isMenuOpen}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
