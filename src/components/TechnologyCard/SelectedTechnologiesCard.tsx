@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 import type { ITechnology } from '../../type/technology';
 import { toast } from 'react-toastify';
+import { RxCross1 } from 'react-icons/rx';
 interface SelectedTechnologiesCardProps {
   technology: ITechnology;
   selectedTechnologies: ITechnology[];
@@ -34,7 +35,7 @@ const SelectedTechnologiesCard = ({
         className="shrink-0 p-1 text-2xl font-extralight sm:text-4xl"
         aria-label={`Remove ${technology.name}`}
       >
-        <span aria-hidden="true">X</span>
+        <RxCross1 aria-hidden="true" />
       </button>
     </div>
   );

@@ -5,14 +5,14 @@ const Footer = () => {
       <div className="mt-16 flex flex-col items-center justify-between gap-8 p-4 text-center sm:mt-20 sm:gap-10 sm:p-10 md:flex-row md:items-center md:text-left">
         <div>
           <img src={Logo} alt="logo" className="mx-auto h-10 w-40 md:mx-0" />
-          <p className="text-[#64748B] text-[12px] mt-5 max-w-[384px]">
+          <div className="text-[#64748B] text-[12px] mt-5 max-w-[384px]">
             Curated tools, technologies, and resources for developers building modern software.
             <ul className="my-5 flex justify-center gap-3 md:justify-start">
               <li>GitHub</li>
               <li>Twitter</li>
               <li>LinkedIn</li>
             </ul>
-          </p>
+          </div>
         </div>
         <div className="hidden text-[12px] flex-col gap-2 md:flex">
           <h2 className="font-bold  text-[#0F172A]">Product</h2>

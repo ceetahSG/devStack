@@ -25,7 +25,7 @@ const Navbar = () => {
         className="w-28 justify-self-center sm:w-32 lg:justify-self-auto"
       />
       <ul
-        className={`${isMenuOpen ? 'flex' : 'hidden'} col-span-3 row-start-2 flex-col gap-4 border-t border-gray-200 pt-4 text-center text-sm lg:order-none lg:flex lg:w-auto lg:flex-row lg:gap-x-4 lg:gap-y-1 lg:border-0 lg:p-0 lg:text-left`}
+        className={`${isMenuOpen ? 'flex' : 'hidden'} col-span-3 row-start-2 flex-col gap-4 border-t border-gray-200 pt-4 text-center text-sm lg:order-0 lg:flex lg:w-auto lg:flex-row lg:gap-x-4 lg:gap-y-1 lg:border-0 lg:p-0 lg:text-left`}
         onClick={() => setIsMenuOpen(false)}
       >
         <li className="text-[#DB2777]">Home</li>
