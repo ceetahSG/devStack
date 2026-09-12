@@ -19,7 +19,13 @@ function App() {
     <>
       <Navbar></Navbar>
       <Hero></Hero>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className="container mx-auto flex h-[50vh] items-center justify-center">
+            <span className="loading loading-spinner loading-xl"></span>
+          </div>
+        }
+      >
         <Technologies technologyPromise={technologyFetch()} />
       </Suspense>
       <Footer></Footer>

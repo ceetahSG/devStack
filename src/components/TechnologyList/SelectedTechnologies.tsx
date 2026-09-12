@@ -28,7 +28,6 @@ const SelectedTechnologies = ({
         </button>
       </div>
     );
-  } else if (selectedTechnologies.length === 1) {
   }
   return (
     <div>

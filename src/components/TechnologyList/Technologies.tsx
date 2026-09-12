@@ -9,7 +9,7 @@ interface TechnologyProps {
 const Technologies = ({ technologyPromise }: TechnologyProps) => {
   const technologies = use(technologyPromise);
   const [technologyLIst, setTechnologyList] = useState<ITechnology[]>([]);
-  console.log(technologyLIst, 'from technology list');
+  // console.log(technologyLIst, 'from technology list');
 
   //   console.log(technologies);
   return (
