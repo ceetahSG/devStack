@@ -21,7 +21,7 @@ const SelectedTechnologies = ({
         <h2 className="text-[#0F172A] font-extrabold text-[16px] mb-2">Your Stack</h2>
         <p className="text-[#64748B] text-[12px] mb-3">No technologies selected yet.</p>
         <button
-          className="btn btn-neutral btn-dash w-full rounded-2xl px-4 py-8 text-[12px] text-[#475569] whitespace-nowrap
+          className="btn btn-dash w-full rounded-2xl px-4 py-8 text-[12px] text-[#94A3B8] whitespace-nowrap
         "
         >
           Your Stack Is Empty
