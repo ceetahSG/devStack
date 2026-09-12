@@ -32,7 +32,7 @@ const TechnologyCard = ({ technology, technologyList, setTechnologyList }: Techn
         <p className="text-[#64748B]">{technology.description}</p>
       </div>
       <div className="flex items-center justify-between my-5">
-        <button className=" p-1.5 text-[#475569] text-[11px] font-medium bg-[#F1F5F9] rounded-l">
+        <button className=" p-1.5 text-[#475569] text-[11px] font-medium bg-[#F1F5F9] rounded-[5px]">
           {technology.category}
         </button>
         <p className="text-[#475569] text-[11px] font-medium">{technology.difficulty}</p>
@@ -48,7 +48,7 @@ const TechnologyCard = ({ technology, technologyList, setTechnologyList }: Techn
         disabled={technologyList.some((t) => t.id === technology.id)}
         className="btn btn-neutral w-full rounded-lg"
       >
-        {technologyList.some((t) => t.id === technology.id) ? 'Added' : 'Add to Stack'}
+        {technologyList.some((t) => t.id === technology.id) ? 'Added to Stack' : 'Add to Stack'}
       </button>
     </div>
   );
