@@ -48,7 +48,7 @@ const TechnologyCard = ({ technology, technologyList, setTechnologyList }: Techn
         disabled={technologyList.some((t) => t.id === technology.id)}
         className="btn btn-neutral w-full rounded-lg"
       >
-        {technologyList.some((t) => t.id === technology.id) ? 'Added to Stack' : 'Add to Stack'}
+        {technologyList.some((t) => t.id === technology.id) ? '✓ Added to Stack' : 'Add to Stack'}
       </button>
     </div>
   );
