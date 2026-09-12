@@ -34,7 +34,7 @@ const SelectedTechnologies = ({
       <div className="border border-gray-200 rounded-lg p-4 sm:p-5">
         <h2 className="text-[#0F172A] font-extrabold text-[16px] mb-2">Your Stack</h2>
         <p className="text-[#64748B] text-[12px] mb-3">
-          {selectedTechnologies.length} technologies selected
+          {selectedTechnologies.length} Technology selected
         </p>
         {selectedTechnologies.map((technology) => (
           <SelectedTechnologiesCard

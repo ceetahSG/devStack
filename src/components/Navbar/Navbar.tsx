@@ -28,11 +28,21 @@ const Navbar = () => {
         className={`${isMenuOpen ? 'flex' : 'hidden'} col-span-3 row-start-2 flex-col gap-4 border-t border-gray-200 pt-4 text-center text-sm lg:order-0 lg:flex lg:w-auto lg:flex-row lg:gap-x-4 lg:gap-y-1 lg:border-0 lg:p-0 lg:text-left`}
         onClick={() => setIsMenuOpen(false)}
       >
-        <li className="text-[#DB2777]">Home</li>
-        <li>Technologies</li>
-        <li>Projects</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li className="text-[#DB2777]">
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#technologies">Technologies</a>
+        </li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
       </ul>
       <div className="flex justify-self-end gap-1 sm:gap-2">
         <button className="btn btn-sm border-none bg-white px-1 text-xs font-light sm:px-4 sm:text-sm">
